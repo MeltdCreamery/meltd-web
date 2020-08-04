@@ -1,38 +1,19 @@
+/* Color Palette */
+/* #E5B3DC */
+/* #F7C1BB */
+/* #F9FB9D */
+/* #B4E4E4 */
+/* #D2E6B3 */
+
+:root {
+    --lavender: hsla(311, 49%, 80%, 1);
+    --pink: hsla(6, 79%, 85%, 1);
+    --yellow: hsla(61, 92%, 80%, 1);
+    --blue: hsla(180, 47%, 80%, 1);
+    --green: hsla(84, 50%, 80%, 1);
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+    display: flex;
+    flex-direction: column;
 }
