@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Card from "../components/Card";
+import { connect } from "react-redux";
 
 const iceCreamData = [
     { name: "vanilla", price: "3" },
@@ -7,16 +8,14 @@ const iceCreamData = [
 ];
 
 const Menu = props => {
-    const [iceCreams, setIceCreams] = useState(iceCreamData);
-
     return (
         <div>
             <div>Menu</div>
             <div>
-                {iceCreams.map(iceCream => {
+                {props.iceCreams.map(iceCream => {
                     return (
                         <div>
-                            <Card title={iceCream.name} price={iceCream.price} img={iceCream.name} />
+                            <Card title={iceCream.name} price={iceCream.price} img={iceCream.img} />
                         </div>
                     );
                 })}
@@ -25,4 +24,10 @@ const Menu = props => {
     );
 };
 
-export default Menu;
+const mapStateToProps = state => {
+    return {
+        iceCreams: state.iceCreams,
+    };
+};
+
+export default connect(mapStateToProps)(Menu);
