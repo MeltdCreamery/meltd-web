@@ -16,4 +16,5 @@
 .App {
     display: flex;
     flex-direction: column;
+    font: montserrat;
 }
