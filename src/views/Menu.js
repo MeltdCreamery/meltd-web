@@ -15,7 +15,7 @@ const Menu = props => {
                 {props.iceCreams.map(iceCream => {
                     return (
                         <div>
-                            <Card title={iceCream.name} price={iceCream.price} img={iceCream.img} />
+                            <Card id={iceCream.id} title={iceCream.name} price={iceCream.price} img={iceCream.img} />
                         </div>
                     );
                 })}
