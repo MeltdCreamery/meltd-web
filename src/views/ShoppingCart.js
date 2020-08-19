@@ -33,7 +33,7 @@ const ShoppingCart = props => {
                     props.cartItems.map(item => {
                         return (
                             <div>
-                                <div> {item.title} </div>
+                                <div> {item.name} </div>
                                 <div> {item.price} </div>
                                 <div> {item.amount} </div>
                             </div>

@@ -14,7 +14,7 @@ const Card = props => {
             <div>{props.price}</div>
 
             <div>
-                <btn onClick={handleClick}>Add to Cart</btn>
+                <button onClick={handleClick}>Add to Cart</button>
             </div>
         </div>
     );

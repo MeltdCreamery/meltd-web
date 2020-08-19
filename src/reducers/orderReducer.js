@@ -50,6 +50,7 @@ const initState = {
     cartItems: [],
     total: 0,
 };
+
 const orderReducer = (state = initState, action) => {
     if (action.type === ADD_TO_CART) {
         let addedItem = state.iceCreams.find(iceCream => iceCream.id === action.id);
@@ -68,7 +69,7 @@ const orderReducer = (state = initState, action) => {
 
             return {
                 ...state,
-                addedItems: [...state.addedItems, addedItem],
+                cartItems: [...state.cartItems, addedItem],
                 total: newTotal,
             };
         }
