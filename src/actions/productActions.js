@@ -1,6 +1,13 @@
 import axios from "axios";
 
-import { FETCH_PRODUCTS_BEGIN, FETCH_PRODUCTS_FAILURE, FETCH_PRODUCTS_SUCCESS } from "./types/product-actions";
+import {
+    ADD_TO_CART,
+    REMOVE_ITEM,
+    SET_QUANTITY,
+    FETCH_PRODUCTS_BEGIN,
+    FETCH_PRODUCTS_SUCCESS,
+    FETCH_PRODUCTS_FAILURE,
+} from "../actions/actionTypes";
 
 const productError = (err, errSrc) => {
     return dispatch => {
@@ -33,4 +40,27 @@ export const fetchProducts = () => dispatch => {
             console.log("error getting products", err);
             dispatch(productError(err, "getIcecream"));
         });
+};
+
+export const addToCart = id => {
+    return {
+        type: ADD_TO_CART,
+        id,
+    };
+};
+
+//remove item action
+export const removeItem = id => {
+    return {
+        type: REMOVE_ITEM,
+        id,
+    };
+};
+
+export const setQuantity = (id, quantity) => {
+    return {
+        type: SET_QUANTITY,
+        id,
+        quantity,
+    };
 };

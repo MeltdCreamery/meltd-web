@@ -2,7 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
-import orderReducer from "./reducers/orderReducer";
 import rootReducer from "./reducers/rootReducer";
 import { Provider } from "react-redux";
 import * as serviceWorker from "./serviceWorker";

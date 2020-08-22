@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { addToCart } from "../actions/orderActions";
+import { addToCart } from "../actions/productActions";
 
 const Card = props => {
     const handleClick = () => {

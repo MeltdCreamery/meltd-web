@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import OrderSummary from "../components/OrderSummary";
 import { connect } from "react-redux";
-import { removeItem, addQuantity, subtractQuantity, setQuantity } from "../actions/orderActions";
+import { removeItem, setQuantity } from "../actions/productActions";
 
 const ShoppingCart = props => {
     const [cartItems, setCartItems] = useState();
@@ -10,14 +10,6 @@ const ShoppingCart = props => {
     //to remove the item completely
     const handleRemove = id => {
         props.removeItem(id);
-    };
-    //to add the quantity
-    const handleAddQuantity = id => {
-        props.addQuantity(id);
-    };
-    //to substruct from the quantity
-    const handleSubtractQuantity = id => {
-        props.subtractQuantity(id);
     };
 
     const handleSetQuantity = (id, quantity) => {
@@ -50,7 +42,7 @@ const ShoppingCart = props => {
 
 const mapStateToProps = state => {
     return {
-        cartItems: state.orderReducer.cartItems,
+        cartItems: state.productReducer.cartItems,
     };
 };
 
@@ -59,14 +51,8 @@ const mapDispatchToProps = dispatch => {
         removeItem: id => {
             dispatch(removeItem(id));
         },
-        addQuantity: id => {
-            dispatch(addQuantity(id));
-        },
-        subtractQuantity: id => {
-            dispatch(subtractQuantity(id));
-        },
         setQuantity: id => {
-            dispatch(subtractQuantity(id));
+            dispatch(setQuantity(id));
         },
     };
 };
