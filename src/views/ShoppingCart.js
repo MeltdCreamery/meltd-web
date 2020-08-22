@@ -25,9 +25,9 @@ const ShoppingCart = props => {
                     props.cartItems.map(item => {
                         return (
                             <div>
-                                <div> {item.name} </div>
-                                <div> {item.price} </div>
-                                <div> {item.amount} </div>
+                                <div> Flavor: {item.flavor} </div>
+                                <div> Price: {item.price} </div>
+                                <div> Quantity: {item.quantity} </div>
                             </div>
                         );
                     })
@@ -43,6 +43,7 @@ const ShoppingCart = props => {
 const mapStateToProps = state => {
     return {
         cartItems: state.productReducer.cartItems,
+        total: state.productReducer.total,
     };
 };
 

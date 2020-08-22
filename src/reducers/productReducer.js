@@ -56,12 +56,14 @@ export default function productReducer(state = initialState, action) {
             //check if the action id exists in the addedItems
             let existing_item = state.cartItems.find(item => action.id === item.id);
             if (existing_item) {
+                console.log("incrementing quantity");
                 addedItem.quantity += 1;
                 return {
                     ...state,
                     total: state.total + addedItem.price,
                 };
             } else {
+                console.log("adding new item to cart");
                 addedItem.quantity = 1;
                 //calculating the total
                 let newTotal = state.total + addedItem.price;
