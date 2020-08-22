@@ -1,5 +1,6 @@
 import React from "react";
 import {
+    GET_CATALOG,
     ADD_TO_CART,
     REMOVE_ITEM,
     ADD_QUANTITY,
@@ -7,6 +8,8 @@ import {
     SET_QUANTITY,
     ADD_SHIPPING,
 } from "../actions/action-types/order-actions";
+
+console.log("hi", process.env.REACT_APP_API_URL);
 
 const initState = {
     iceCreams: [

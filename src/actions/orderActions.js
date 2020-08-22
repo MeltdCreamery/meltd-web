@@ -1,4 +1,5 @@
 import {
+    GET_CATALOG,
     ADD_TO_CART,
     REMOVE_ITEM,
     ADD_QUANTITY,
@@ -6,6 +7,12 @@ import {
     SET_QUANTITY,
     ADD_SHIPPING,
 } from "../actions/action-types/order-actions";
+
+export const getCatalog = () => {
+    return {
+        type: GET_CATALOG,
+    };
+};
 
 export const addToCart = id => {
     return {
