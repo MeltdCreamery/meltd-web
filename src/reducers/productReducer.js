@@ -1,8 +1,4 @@
-import {
-    FETCH_PRODUCTS_BEGIN,
-    FETCH_PRODUCTS_SUCCESS,
-    FETCH_PRODUCTS_FAILURE,
-} from "../actions/action-types/product-actions";
+import { FETCH_PRODUCTS_BEGIN, FETCH_PRODUCTS_SUCCESS, FETCH_PRODUCTS_FAILURE } from "../actions/types/product-actions";
 
 const initialState = {
     iceCreams: [],
@@ -24,9 +20,10 @@ export default function productReducer(state = initialState, action) {
         case FETCH_PRODUCTS_SUCCESS:
             // All done: set loading "false".
             // Also, replace the items with the ones from the server
+            console.log("hello", action.payload);
             return {
                 ...state,
-                icecreams: action.payload,
+                iceCreams: [...action.payload],
                 loading: false,
             };
 

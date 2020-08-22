@@ -50,7 +50,7 @@ const ShoppingCart = props => {
 
 const mapStateToProps = state => {
     return {
-        cartItems: state.cartItems,
+        cartItems: state.orderReducer.cartItems,
     };
 };
 

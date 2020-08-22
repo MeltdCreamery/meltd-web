@@ -12,7 +12,7 @@ const Menu = props => {
         <div>
             <div>Menu</div>
             <div>
-                {props.iceCreams &&
+                {props.iceCreams ? (
                     props.iceCreams.map(iceCream => {
                         return (
                             <div>
@@ -24,7 +24,10 @@ const Menu = props => {
                                 />
                             </div>
                         );
-                    })}
+                    })
+                ) : (
+                    <div>Error getting ice creams</div>
+                )}
             </div>
         </div>
     );
@@ -32,13 +35,7 @@ const Menu = props => {
 
 const mapStateToProps = state => {
     return {
-        iceCreams: state.iceCreams,
-    };
-};
-
-const mapDispatchToProps = dispatch => {
-    return {
-        fetchProducts,
+        iceCreams: state.productReducer.iceCreams,
     };
 };
 

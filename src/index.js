@@ -3,11 +3,14 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import orderReducer from "./reducers/orderReducer";
+import rootReducer from "./reducers/rootReducer";
 import { Provider } from "react-redux";
-import { createStore } from "redux";
 import * as serviceWorker from "./serviceWorker";
+import { createStore, applyMiddleware, compose } from "redux";
+import thunk from "redux-thunk";
 
-const store = createStore(orderReducer);
+const store = createStore(rootReducer, applyMiddleware(thunk));
+// const store = createStore(orderReducer);
 
 ReactDOM.render(
     <React.StrictMode>

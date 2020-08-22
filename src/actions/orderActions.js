@@ -5,7 +5,7 @@ import {
     SUB_QUANTITY,
     SET_QUANTITY,
     ADD_SHIPPING,
-} from "../actions/action-types/order-actions";
+} from "./types/order-actions";
 
 export const addToCart = id => {
     return {

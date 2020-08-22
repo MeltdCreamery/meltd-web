@@ -1,10 +1,6 @@
-import { axios } from "axios";
+import axios from "axios";
 
-import {
-    FETCH_PRODUCTS_BEGIN,
-    FETCH_PRODUCTS_FAILURE,
-    FETCH_PRODUCTS_SUCCESS,
-} from "../actions/action-types/product-actions";
+import { FETCH_PRODUCTS_BEGIN, FETCH_PRODUCTS_FAILURE, FETCH_PRODUCTS_SUCCESS } from "./types/product-actions";
 
 const productError = (err, errSrc) => {
     return dispatch => {
@@ -20,8 +16,12 @@ export const fetchProducts = () => dispatch => {
         type: FETCH_PRODUCTS_BEGIN,
     });
 
+    console.log("URL", `${process.env.REACT_APP_API_URL}/icecreams/`);
+    let config = {
+        headers: { "Access-Control-Allow-Origin": "*" },
+    };
     axios
-        .get("${process.env.API_URL}/icecreams/")
+        .get(`${process.env.REACT_APP_API_URL}/icecreams/`, config)
         .then(response => {
             console.log("response", response);
             return dispatch({
@@ -30,6 +30,7 @@ export const fetchProducts = () => dispatch => {
             });
         })
         .catch(err => {
+            console.log("error getting products", err);
             dispatch(productError(err, "getIcecream"));
         });
 };
