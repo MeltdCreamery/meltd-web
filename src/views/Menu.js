@@ -18,7 +18,7 @@ const Menu = props => {
                             <div>
                                 <Card
                                     id={iceCream.id}
-                                    title={iceCream.name}
+                                    title={iceCream.flavor}
                                     price={iceCream.price}
                                     img={iceCream.img}
                                 />
