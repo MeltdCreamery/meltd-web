@@ -10,7 +10,8 @@ const Menu = props => {
 
     return (
         <div>
-            <div>Menu</div>
+            <h1>Shop</h1>
+            <hr></hr>
             <div>
                 {props.iceCreams ? (
                     props.iceCreams.map(iceCream => {

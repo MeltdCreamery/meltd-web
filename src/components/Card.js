@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { addToCart } from "../actions/productActions";
+import "../styles/card.css";
 
 const Card = props => {
     const handleClick = () => {
@@ -8,7 +9,7 @@ const Card = props => {
     };
 
     return (
-        <div>
+        <div className="icecream-card">
             <img src={props.image} alt="icecream" />
             <div>{props.title}</div>
             <div>{props.price}</div>

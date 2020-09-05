@@ -4,38 +4,38 @@ import Home from "./views/Home";
 import Menu from "./views/Menu";
 import ShoppingCart from "./views/ShoppingCart";
 import Checkout from "./views/Checkout";
-import Contact from "./views/Contact";
+import About from "./views/About";
+import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCoffee } from "@fortawesome/free-solid-svg-icons";
+import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
 import "./App.css";
 
 const App = () => {
     return (
         <div className="App">
-            <div>Hello!</div>
-
             <Router>
                 <div>
-                    <nav>
-                        <ul>
-                            <li>
-                                <Link to="/">Home</Link>
-                            </li>
-                            <li>
-                                <Link to="/menu">Menu</Link>
-                            </li>
-                            <li>
-                                <Link to="/cart">Cart</Link>
-                            </li>
-                            <li>
-                                <Link to="/contact">Contact Us</Link>
-                            </li>
-                        </ul>
+                    <nav className="main-navbar">
+                        <div className="main-navbar-right">
+                            <Link to="/shop">Shop</Link>
+                            <Link to="/about">Our Story</Link>
+                        </div>
+                        <div>
+                            <Link to="/">MELTD</Link>
+                        </div>
+                        <div>
+                            <Link to="/cart">
+                                <ShoppingCartOutlinedIcon />
+                            </Link>
+                        </div>
                     </nav>
 
                     <Switch>
-                        <Route path="/contact">
-                            <Contact />
+                        <Route path="/about">
+                            <About />
                         </Route>
-                        <Route path="/menu">
+                        <Route path="/shop">
                             <Menu />
                         </Route>
                         <Route path="/cart">
@@ -50,6 +50,13 @@ const App = () => {
                     </Switch>
                 </div>
             </Router>
+            <div className="app-footer">
+                <div className="app-footer-detail">Meltd Creamery</div>
+                <div className="app-footer-social">
+                    <FontAwesomeIcon icon={faFacebook} />
+                    <FontAwesomeIcon icon={faInstagram} />
+                </div>
+            </div>
         </div>
     );
 };
