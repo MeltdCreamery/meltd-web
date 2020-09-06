@@ -1,0 +1,31 @@
+h1 {
+    font-weight: 600;
+    font-size: 6em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+hr {
+    width: 96%;
+    margin-bottom: 2rem;
+}
+
+.ice-cream-menu {
+    overflow: auto;
+}
+
+.ice-cream-menu::-webkit-scrollbar {
+    width: 10px;
+    background: transparent;
+}
+
+.ice-cream-menu::-webkit-scrollbar-thumb {
+    width: 5px;
+    border-radius: 6px;
+    transition: opacity 500ms ease;
+    background-color: rgba(200, 200, 200, 0.5);
+    cursor: pointer;
+    height: 60%;
+}

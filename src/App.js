@@ -7,7 +7,6 @@ import Checkout from "./views/Checkout";
 import About from "./views/About";
 import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCoffee } from "@fortawesome/free-solid-svg-icons";
 import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
 import "./App.css";
 
@@ -17,14 +16,14 @@ const App = () => {
             <Router>
                 <div>
                     <nav className="main-navbar">
-                        <div className="main-navbar-right">
+                        <div className="main-navbar-left">
                             <Link to="/shop">Shop</Link>
                             <Link to="/about">Our Story</Link>
                         </div>
-                        <div>
+                        <div className="main-navbar-center">
                             <Link to="/">MELTD</Link>
                         </div>
-                        <div>
+                        <div className="main-navbar-right">
                             <Link to="/cart">
                                 <ShoppingCartOutlinedIcon />
                             </Link>
@@ -51,7 +50,10 @@ const App = () => {
                 </div>
             </Router>
             <div className="app-footer">
-                <div className="app-footer-detail">Meltd Creamery</div>
+                <div className="app-footer-detail">
+                    <div>Meltd Creamery</div>
+                    <div>meltdcreamery@gmail.com</div>
+                </div>
                 <div className="app-footer-social">
                     <FontAwesomeIcon icon={faFacebook} />
                     <FontAwesomeIcon icon={faInstagram} />

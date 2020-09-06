@@ -1,56 +1,65 @@
 import React, { useState } from "react";
-import OrderSummary from "../components/OrderSummary";
+import { Link } from "react-router-dom";
 import RectangularButton from "../components/RectangularButton";
 import { connect } from "react-redux";
 import { removeItem, setQuantity } from "../actions/productActions";
+import { formatCurrency } from "../utils/CurrencyFormatter";
+import CartRow from "../components/CartRow";
+
+import "../styles/shoppingCart.css";
 
 const ShoppingCart = props => {
     //to remove the item completely
-    const handleRemove = id => {
-        props.removeItem(id);
-    };
 
-    const handleSetQuantity = (id, quantity) => {
-        props.setQuantity(id, quantity);
-    };
+    const handleCheckout = () => {};
 
     return (
-        <div>
+        <div className="shopping-cart">
             <h2>SHOPPING CART</h2>
 
             {props.cartItems && props.cartItems.length > 0 ? (
                 <div>
                     <div className="cart-items-table-header">
-                        <div>Item</div>
-                        <div>QTY</div>
-                        <div>Price</div>
+                        <div>ITEM</div>
+                        <div>QTY.</div>
+                        <div>PRICE</div>
                     </div>
                     <hr />
                     <div className="cart-items-table">
                         {props.cartItems.map(item => {
                             return (
-                                <div>
-                                    <div> Flavor: {item.flavor} </div>
-                                    <div> Price: {item.price} </div>
-                                    <div> Quantity: {item.quantity} </div>
-                                </div>
+                                <>
+                                    <CartRow item={item} />
+                                    <hr />
+                                </>
                             );
                         })}
                     </div>
-                    <hr />
                     <div className="cart-order-summary">
-                        <div>Subtotal: {props.total}</div>
+                        <div className="cart=subtotal">Subtotal: {formatCurrency(props.total)}</div>
                         <RectangularButton
                             text="CHECKOUT"
                             width="130px"
                             height="50px"
                             backgroundColor="black"
                             fontColor="white"
+                            onClick={handleCheckout}
                         />
                     </div>
                 </div>
             ) : (
-                <div>You have nothing in your shopping cart. Continue shopping</div>
+                <div className="shopping-cart-empty">
+                    <div>You have nothing in your shopping cart. Continue shopping</div>
+                    <Link to="/shop">
+                        <RectangularButton
+                            text="SHOP"
+                            width="130px"
+                            height="50px"
+                            backgroundColor="black"
+                            fontColor="white"
+                        />
+                    </Link>
+                </div>
             )}
         </div>
     );

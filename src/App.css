@@ -16,7 +16,24 @@
 .App {
     display: flex;
     flex-direction: column;
-    font-family: montserrat;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    /* font-family: "montserrat"; */
+}
+
+.App::-webkit-scrollbar {
+    width: 10px;
+    background: transparent;
+}
+
+.App::-webkit-scrollbar-thumb {
+    width: 5px;
+    border-radius: 6px;
+    transition: opacity 500ms ease;
+    background-color: rgba(200, 200, 200, 0.5);
+    cursor: pointer;
+    height: 60%;
 }
 
 btn {
@@ -31,28 +48,38 @@ a {
 }
 
 .app-footer {
-    margin-top: 2rem;
+    margin: 2rem 0 0 0;
+    padding: 0;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     background-color: lavender;
-    min-height: 30%;
+    height: 10rem;
+    /* min-height: 30%; */
     width: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 
 .app-footer-detail {
+    height: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
+    align-items: flex-start;
+    justify-content: space-around;
+    margin-left: 2rem;
+    font-size: 1.2em;
 }
 
 .app-footer-social {
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
+    margin-right: 2rem;
 }
 
 .main-navbar {
@@ -60,13 +87,37 @@ a {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    /* width: 100%; */
 }
 
-.main-navbar-right {
+.main-navbar-left {
+    margin-left: 1.5rem;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
+    width: 20%;
+}
+
+.main-navbar-left a {
+    margin-right: 1rem;
+}
+
+.main-navbar-center {
+    font-weight: 600;
+    font-size: 1.5em;
+}
+
+.main-navbar-right {
+    margin-right: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    width: 20%;
 }
 
 .rect-btn {

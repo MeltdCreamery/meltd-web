@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Card from "../components/Card";
 import { connect } from "react-redux";
 import { fetchProducts } from "../actions/productActions";
+import "../styles/menu.css";
 
 const Menu = props => {
     useEffect(() => {
@@ -11,8 +12,8 @@ const Menu = props => {
     return (
         <div>
             <h1>Shop</h1>
-            <hr></hr>
-            <div>
+            <hr />
+            <div className="ice-cream-menu">
                 {props.iceCreams ? (
                     props.iceCreams.map(iceCream => {
                         return (
